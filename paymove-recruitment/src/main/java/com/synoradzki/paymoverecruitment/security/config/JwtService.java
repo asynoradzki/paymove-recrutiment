@@ -25,6 +25,18 @@ public class JwtService {
   @Value("${application.security.jwt.refresh-token.expiration}")
   private long refreshExpiration;
 
+  public String getJWT(String authHeader) {
+    if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+      return null;
+    }
+    return authHeader.substring(7);
+  }
+
+  public String extractUserRole(String token) {
+    final Claims claims = extractAllClaims(token);
+    return claims.get("role", String.class);
+  }
+
   public String extractUsername(String token) {
     return extractClaim(token, Claims::getSubject);
   }

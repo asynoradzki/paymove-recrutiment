@@ -36,6 +36,7 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests(authz -> authz
                 .requestMatchers(
+                        "items/all",
                         "/api/v1/auth/**",
                         "/v2/api-docs",
                         "/v3/api-docs",

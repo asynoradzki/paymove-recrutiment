@@ -5,8 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
-@ResponseStatus(HttpStatus.FORBIDDEN)
-public class AlreadyExistsException extends RuntimeException {
+public class AlreadyExistsException extends Exception {
 
     public AlreadyExistsException(String resourceName) {
         super(String.format("%s already exists in database", resourceName));

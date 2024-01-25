@@ -17,7 +17,20 @@ public class AppUserController {
 
     private final AppUserService appUserService;
 
-    //403 jeśli nie jest zalogowany
+    /**
+     * Endpoint available for authenticated users with role ADMIN
+     *
+     * @return a list of all users
+     *
+     * AppUserResponseDTO(
+     *         Long userId,
+     *         String firstname,
+     *         String lastname,
+     *         String email,
+     *         Role role (ADMIN, USER)
+     * )
+     */
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/")
     public ResponseEntity<List<AppUserResponseDTO>> getUsers() {

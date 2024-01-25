@@ -1,5 +1,6 @@
 package com.synoradzki.paymoverecruitment.security.auth;
 
+import com.synoradzki.paymoverecruitment.exception.AlreadyExistsException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,16 +22,24 @@ public class AuthenticationController {
    *                        all fields must be delivered, email is validated. Role options Role.ADMIN, Role.USER
    *
    * @return JWT token if successful, otherwise returns 403 status code.
+    *
+    * @throws AlreadyExistsException Status code 403 error message: "email already exists in database"
    */
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
           @Valid @RequestBody RegisterRequest request
-  ) {
+  ) throws AlreadyExistsException {
     return ResponseEntity.ok(service.register(request));
   }
 
-  //403 jeśli niepoprawne dane
+
+  /**
+   * The method authenticates users
+   * @param request AuthenticationRequest(String email, String password)
+   *
+   * @return JWT token if successful, otherwise returns 403 status code.
+   */
 
   @PostMapping("/authenticate")
   public ResponseEntity<AuthenticationResponse> authenticate(
