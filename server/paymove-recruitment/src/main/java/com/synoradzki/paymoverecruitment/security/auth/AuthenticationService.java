@@ -61,7 +61,10 @@ public class AuthenticationService {
         );
         AppUser user = repository.findByEmail(request.getEmail())
                 .orElseThrow();
-        String jwtToken = jwtService.generateToken(user);
+        String jwtToken = jwtService.generateToken(
+                Map.of("role", user.getRole()),
+                user
+        );
 //    String refreshToken = jwtService.generateRefreshToken(user);
         revokeAllUserTokens(user);
         saveUserToken(user, jwtToken);
