@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { GeneralContainer } from "../../router/App.styles";
 
-export const AllItemsContainer = styled.div`
-    height: 85vh;
-    background-color: white;
+export const AllItemsContainer = styled(GeneralContainer)``;
+
+export const Items = styled(GeneralContainer)`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 16px;
 `;

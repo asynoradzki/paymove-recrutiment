@@ -1,6 +1,4 @@
 import styled from "styled-components";
+import { GeneralContainer } from "../../router/App.styles";
 
-export const LoginContainer = styled.div`
-    height: 85vh;
-    background-color: white;
-`;
+export const LoginContainer = styled(GeneralContainer)``;

@@ -18,7 +18,6 @@ export const UserContextProvider = ({ children }: React.PropsWithChildren) => {
         setCurrentUser(user);
     };
 
-    // Po uruchomieniu aplikacji sprawdza czy jest token w local storage i ustawia current usera
     useEffect(() => {
         const token: string | null = localStorage.getItem(ACCESS_TOKEN);
         if (token) {

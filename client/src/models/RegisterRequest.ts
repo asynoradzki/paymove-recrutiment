@@ -3,5 +3,5 @@ export type RegisterRequest = {
     lastname: string;
     email: string;
     password: string;
-    role: "ADMIN" | "USER";
+    role: "ADMIN" | "USER" | null;
 };

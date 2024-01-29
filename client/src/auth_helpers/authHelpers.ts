@@ -38,7 +38,7 @@ function verifyIfTokenIsValid(jwtToken: string | null): boolean {
 }
 
 function isTokenExpired(tokenExp: number, currentTimestamp: number): boolean {
-    const tenSeconds: number = 10;
+    const tenSeconds: number = 0;
     return tokenExp < currentTimestamp - tenSeconds;
 }
 
@@ -48,6 +48,5 @@ export const handleLogout = async (jwtToken: string) => {
     } catch (error: any) {
         console.log("An error on the server occurred while logging out");
     }
-
     localStorage.clear();
 };

@@ -22,7 +22,7 @@ public class ApplicationExceptionHandler {
         return errorMap;
     }
 
-    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(NoAuthorizationException.class)
     public Map<String, String> handleNoAuthorizationException(NoAuthorizationException ex) {
         Map<String, String> errorMap = new HashMap<>();
@@ -37,4 +37,5 @@ public class ApplicationExceptionHandler {
         errorMap.put("errorMessage", ex.getMessage());
         return errorMap;
     }
+
 }

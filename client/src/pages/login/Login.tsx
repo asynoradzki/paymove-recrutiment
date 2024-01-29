@@ -9,6 +9,8 @@ import jwtDecode from "jwt-decode";
 import { saveTokenToLocaleStorage, validateEmailRFC2822 } from "../../auth_helpers/authHelpers";
 import { Box, Button, Checkbox, FormControlLabel, Stack, TextField } from "@mui/material";
 import { UserFromToken } from "../../models/UserFromToken";
+import { Haeding } from "../../router/App.styles";
+import { CLOSE_TIME } from "../../constants/constants";
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -39,22 +41,10 @@ export const Login = () => {
             }
             toast.error(message, {
                 position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2000,
+                autoClose: CLOSE_TIME,
             });
         }
     }, [signInRequest, navigate, userModifier]);
-
-    const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSignInRequest({ ...signInRequest, email: e.currentTarget.value });
-    };
-
-    const onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSignInRequest({ ...signInRequest, password: e.currentTarget.value });
-    };
-
-    const onShowPasswordClick = useCallback(() => {
-        setShowPassword(!showPassword);
-    }, [showPassword]);
 
     useEffect(() => {
         setIsEmailValid(validateEmailRFC2822(signInRequest.email));
@@ -66,6 +56,7 @@ export const Login = () => {
 
     return (
         <LoginContainer>
+            <Haeding>Log In The App</Haeding>
             <Box
                 sx={{
                     display: "flex",
@@ -75,7 +66,7 @@ export const Login = () => {
                     height: "100%",
                 }}
             >
-                <Stack width={300} direction={"column"} spacing={2} alignItems={"center"}>
+                <Stack marginTop={16} width={360} direction={"column"} spacing={2} alignItems={"center"}>
                     <TextField
                         fullWidth
                         label="email"
@@ -84,7 +75,7 @@ export const Login = () => {
                         color="primary"
                         value={signInRequest.email}
                         error={!(isEmailValid || signInRequest.email.length === 0)}
-                        onChange={onEmailChange}
+                        onChange={(e) => setSignInRequest({ ...signInRequest, email: e.currentTarget.value })}
                     />
                     <TextField
                         fullWidth
@@ -94,11 +85,13 @@ export const Login = () => {
                         color="primary"
                         type={showPassword ? "text" : "password"}
                         value={signInRequest.password}
-                        onChange={onPasswordChange}
+                        onChange={(e) => setSignInRequest({ ...signInRequest, password: e.currentTarget.value })}
                     />
                     <Box sx={{ width: "100%" }}>
                         <FormControlLabel
-                            control={<Checkbox checked={showPassword} onChange={onShowPasswordClick} />}
+                            control={
+                                <Checkbox checked={showPassword} onChange={() => setShowPassword(!showPassword)} />
+                            }
                             label="Show password"
                         />
                     </Box>

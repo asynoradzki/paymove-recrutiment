@@ -1,12 +1,16 @@
 export const ACCESS_TOKEN = "ACCESS_TOKEN";
-// export const REFRESH_TOKEN = "REFRESH_TOKEN";
-// export const PAGE_NO = "PAGE_NO";
-// export const PAGE_SIZE = "PAGE_SIZE";
 
-// export const minCharsToTriggerSearch = 3;
-// export const defaultImage: string =
-//     "https://blogit.itu.dk/lucarossi/wp-content/uploads/sites/80/2019/09/1_ATVm5uCixG7ntr40XlQbrg.jpeg";
+// Colors
+export const COLOR1: string = "#2a2829";
+export const COLOR2: string = "#c84648";
+export const COLOR3: string = "#d3c8b4";
+export const COLOR4: string = "#e7e4d5";
+export const COLOR5: string = "#fff3db";
 
-// export const SM = 600;
-// export const MD = 900;
-// export const LG = 1200;
+// Navbar & widnow size
+export const MIN_WIDTH: string = "1200px";
+export const NAVBAR_HEIGHT: string = "10vh";
+export const CONTENT_HEIGHT: string = "90vh";
+
+// Toastify timelapse
+export const CLOSE_TIME: number = 2000;

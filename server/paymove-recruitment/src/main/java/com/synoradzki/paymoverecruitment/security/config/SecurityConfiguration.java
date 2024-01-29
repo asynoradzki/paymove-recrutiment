@@ -52,7 +52,6 @@ public class SecurityConfiguration {
                 .permitAll()
 
                 .anyRequest().authenticated());
-//                .anyRequest().permitAll());
 
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.authenticationProvider(authenticationProvider);

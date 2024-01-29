@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import jwtDecode from "jwt-decode";
 import axios, { AxiosRequestConfig } from "axios";
-import { UserFromToken } from "../models/UserFromToken";
 import { getJwtToken } from "../auth_helpers/authHelpers";
 
 export const authorizedApi = axios.create();
@@ -12,7 +10,7 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(Componen
     return function AxiosIntercepted(props: T) {
         const navigate = useNavigate();
         const [isInitialized, setIsInitialized] = useState<boolean>(false);
-        const { userModifier } = useContext(UserContext);
+        const { userModifier, currentUser } = useContext(UserContext);
 
         useEffect(() => {
             axios.interceptors.request.use((config: AxiosRequestConfig) => {
@@ -22,15 +20,6 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(Componen
                 };
             });
 
-            const updateUserContext = (jwtToken: string | null): void => {
-                if (jwtToken) {
-                    const decodedAccessToken: UserFromToken = jwtDecode(jwtToken);
-                    userModifier({ ...decodedAccessToken });
-                } else {
-                    userModifier(null);
-                }
-            };
-
             authorizedApi.interceptors.request.use(async (config: AxiosRequestConfig) => {
                 const token: string | null = await getJwtToken();
 
@@ -38,10 +27,10 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(Componen
                     if (config?.headers) {
                         config.headers["Authorization"] = `Bearer ${token}`;
                         config.headers["accept"] = "*/*";
-                        updateUserContext(token);
-                    } else {
-                        updateUserContext(null);
                     }
+                } else {
+                    userModifier(null);
+                    navigate("/logout");
                 }
                 return {
                     ...config,
@@ -56,15 +45,14 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(Componen
                 (error: any) => {
                     if (error.response.status === 403) {
                         localStorage.clear();
-                        updateUserContext(null);
-                        navigate("/");
+                        console.log("current user interceptor: ", currentUser);
                     }
                     return Promise.reject(error);
                 }
             );
 
             setIsInitialized(true);
-        }, [navigate, userModifier]);
+        }, [navigate, userModifier, currentUser]);
 
         return isInitialized ? <Component {...props} /> : <></>;
     };

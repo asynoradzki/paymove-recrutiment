@@ -17,6 +17,10 @@ public class ItemController {
     private final ItemService itemService;
 
     /**
+     * Displays all items available for sale
+     * GET
+     * /items/all
+     *
      *
      * @return a list of items for sale. Endpoint for unauthorized users
      *
@@ -39,6 +43,9 @@ public class ItemController {
     /**
      * Displays items offered for sale by the chosen user identified by email
      * Endpoint for authenticated users
+     *
+     * GET
+     * /items/offered?email=email
      *
      * @param email as String
      * @return ItemResponseDTO List
@@ -68,6 +75,9 @@ public class ItemController {
      * Displays purchased items by the chosen user identified by email
      * Endpoint for authenticated users
      *
+     * GET
+     * /items/purchased?email=email
+     *
      * @param email as String
      * @return ItemResponseDTO List
      * ItemResponseDTO(
@@ -91,8 +101,12 @@ public class ItemController {
     }
 
     /**
+     *
      * The method allows authenticated users to add items for sale
      * Endpoint for authenticated users
+     *
+     * POST
+     * /items/
      *
      * @param itemCreateDTO
      * ItemCreateDTO(
@@ -127,6 +141,9 @@ public class ItemController {
     /**
      * Allows authenticated users to buy products
      *
+     * PATCH
+     * /items/buy/itemId?email=email
+     *
      * @param itemId the id of the product the user wants to buy as path variable
      * @param email user email
      * @return purchased product as
@@ -155,6 +172,10 @@ public class ItemController {
     }
 
     /**
+     * Allows authenticated users to delete items
+     *
+     * DELETE
+     * /items/itemId
      *
      * @param token the token is used to verify the user. Only item owner or users with role ADMIN can delete products
      * @param itemId item id to be deleted
@@ -169,7 +190,7 @@ public class ItemController {
      *        LocalDate purchaseDate,
      *        String buyerEmail
      * )
-     * @throws NoAuthorizationException status code 403 if the user has no right to modify.
+     * @throws NoAuthorizationException status code 401 if the user has no right to modify.
      *                                  error message: "only item owner or user with role "Admin" can delete item"
      * @throws EntityNotFoundException if item does not exist in database. Status code 404.
      *                                  error message: "item not found in database"

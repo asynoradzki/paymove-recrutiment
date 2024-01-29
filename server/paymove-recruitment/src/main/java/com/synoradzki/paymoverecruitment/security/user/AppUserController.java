@@ -18,7 +18,11 @@ public class AppUserController {
     private final AppUserService appUserService;
 
     /**
-     * Endpoint available for authenticated users with role ADMIN
+     * Lists all users.
+     * Endpoint only available for authenticated users with role ADMIN
+     *
+     * GET
+     * /users/
      *
      * @return a list of all users
      *

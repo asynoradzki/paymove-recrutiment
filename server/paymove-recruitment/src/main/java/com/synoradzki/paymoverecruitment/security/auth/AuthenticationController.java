@@ -14,46 +14,43 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AuthenticationController {
 
-  private final AuthenticationService service;
+    private final AuthenticationService service;
 
-   /**
-   * The method registers new users
-   * @param request RegisterRequest(String firstname, String lastname, String email, String password, Role)
-   *                        all fields must be delivered, email is validated. Role options Role.ADMIN, Role.USER
-   *
-   * @return JWT token if successful, otherwise returns 403 status code.
-    *
-    * @throws AlreadyExistsException Status code 403 error message: "email already exists in database"
-   */
+    /**
+     * The method registers new users
+     *
+     * POST
+     * /api/v1/auth/register
+     *
+     * @param request RegisterRequest(String firstname, String lastname, String email, String password, Role)
+     *                all fields must be delivered, email is validated. Role options Role.ADMIN, Role.USER
+     * @return JWT token if successful, otherwise returns 403 status code.
+     * @throws AlreadyExistsException Status code 403 error message: "email already exists in database"
+     */
 
-  @PostMapping("/register")
-  public ResponseEntity<AuthenticationResponse> register(
-          @Valid @RequestBody RegisterRequest request
-  ) throws AlreadyExistsException {
-    return ResponseEntity.ok(service.register(request));
-  }
+    @PostMapping("/register")
+    public ResponseEntity<AuthenticationResponse> register(
+            @Valid @RequestBody RegisterRequest request
+    ) throws AlreadyExistsException {
+        return ResponseEntity.ok(service.register(request));
+    }
 
 
-  /**
-   * The method authenticates users
-   * @param request AuthenticationRequest(String email, String password)
-   *
-   * @return JWT token if successful, otherwise returns 403 status code.
-   */
+    /**
+     * The method authenticates users
+     *
+     * POST
+     * /api/v1/auth/authenticate
+     *
+     * @param request AuthenticationRequest(String email, String password)
+     * @return JWT token if successful, otherwise returns 403 status code.
+     */
 
-  @PostMapping("/authenticate")
-  public ResponseEntity<AuthenticationResponse> authenticate(
-      @RequestBody AuthenticationRequest request
-  ) {
-    return ResponseEntity.ok(service.authenticate(request));
-  }
-
-//  @PostMapping("/refresh-token")
-//  public void refreshToken(
-//      HttpServletRequest request,
-//      HttpServletResponse response
-//  ) throws IOException {
-//    service.refreshToken(request, response);
-//  }
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request
+    ) {
+        return ResponseEntity.ok(service.authenticate(request));
+    }
 
 }

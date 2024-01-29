@@ -2,7 +2,6 @@ package com.synoradzki.paymoverecruitment.item;
 
 import com.synoradzki.paymoverecruitment.security.user.AppUser;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

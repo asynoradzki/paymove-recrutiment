@@ -5,6 +5,7 @@ import com.synoradzki.paymoverecruitment.exception.NoAuthorizationException;
 import com.synoradzki.paymoverecruitment.security.config.JwtService;
 import com.synoradzki.paymoverecruitment.security.user.AppUser;
 import com.synoradzki.paymoverecruitment.security.user.AppUserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -68,6 +69,7 @@ public class ItemService {
         return itemDTOMapper.apply(itemRepository.save(item));
     }
 
+    @Transactional
     public ItemResponseDTO buyItem(Long itemId, String email) throws EntityNotFoundException {
         AppUser user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new EntityNotFoundException("email not found in database"));
