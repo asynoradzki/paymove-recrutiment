@@ -5,6 +5,7 @@ The app is a simpliied second hand items auction allowing users to sell and buy 
 
 The Navbar allows to navigate between available functionalities displaying navitagion options based on the user's authorities. Some date is loaded on the application start.
 
+
 ## To start the application
 * Clone the repository
 * To run server application
@@ -15,6 +16,9 @@ The Navbar allows to navigate between available functionalities displaying navit
   * Open the client folder in your IDE
   * run npm install command to load the dependencies
   * run npm start
+
+
+## Application screenshots
 
 1. Unauthorized user
 ![1](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/350c1fd0-0d81-4019-a375-a8cb8f7846a9)
