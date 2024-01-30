@@ -7,9 +7,9 @@ import { AllUsers } from "../pages/all_users/AllUsers";
 import { AddItem } from "../pages/add_item/AddItem";
 import { MyItemsForSale } from "../pages/my_items_for_sale/MyItemsForSale";
 import { MyPurchasedItems } from "../pages/my_purchased_items/MyPurchasedItems";
-import { Logout } from "../hooks/Logout";
+import { withAxiosIntercepted } from "../hooks/withAxiosIntercepted";
 
-export const AppRouter = () => {
+const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Navbar />}>
@@ -20,8 +20,9 @@ export const AppRouter = () => {
                 <Route path="add_item" element={<AddItem />} />
                 <Route path="my_items_for_sale" element={<MyItemsForSale />} />
                 <Route path="my_purchased_items" element={<MyPurchasedItems />} />
-                <Route path="logout" element={<Logout />} />
             </Route>
         </Routes>
     );
 };
+
+export default withAxiosIntercepted(AppRouter);

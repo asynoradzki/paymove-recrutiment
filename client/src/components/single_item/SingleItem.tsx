@@ -1,6 +1,6 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { Item } from "../../models/Item";
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { ItemApi } from "../../api/ItemApi";
 import { toast } from "react-toastify";
 import { UserContext } from "../../context/UserContext";
@@ -13,6 +13,11 @@ interface SingleItemProps {
 
 export const SingleItem = ({ item, getAvailableItems }: SingleItemProps) => {
     const { currentUser } = useContext(UserContext);
+    const [priceInDollars, setPriceInDollars] = useState<string>("");
+
+    useEffect(() => {
+        setPriceInDollars(`${Math.floor(item.price / 100)},${String(item.price % 100).padStart(2, "0")}`);
+    }, [item]);
 
     const deleteItem = useCallback(
         async (itemId: number) => {
@@ -81,7 +86,7 @@ export const SingleItem = ({ item, getAvailableItems }: SingleItemProps) => {
                 <Typography variant="h6">{item.itemName}</Typography>
                 <Typography variant="subtitle2">{item.itemDescription}</Typography>
                 <Typography variant="subtitle1">Offered by: {item.sellerEmail}</Typography>
-                <Typography variant="subtitle1">Price: {item.price}$</Typography>
+                <Typography variant="subtitle1">Price: {priceInDollars}$</Typography>
                 {item.purchaseDate && (
                     <Typography variant="subtitle2">
                         Purchased on: {item.purchaseDate ? new Date(item.purchaseDate).toLocaleDateString() : ""}

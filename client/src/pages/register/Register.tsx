@@ -74,7 +74,7 @@ export const Register = () => {
             !!registerRequest.firstname &&
             !!registerRequest.lastname &&
             isEmailValid &&
-            !!registerRequest.password &&
+            registerRequest.password.length > 7 &&
             repeatedPassword === registerRequest.password &&
             !!registerRequest.role;
 
@@ -120,7 +120,6 @@ export const Register = () => {
                         variant="outlined"
                         required
                         color="primary"
-                        // type={showPassword ? "text" : "password"}
                         value={registerRequest.lastname}
                         onChange={(e) => setRegisterRequest({ ...registerRequest, lastname: e.currentTarget.value })}
                     />
@@ -142,6 +141,7 @@ export const Register = () => {
                         color="primary"
                         type={showPassword ? "text" : "password"}
                         value={registerRequest.password}
+                        error={registerRequest.password.length < 8 && registerRequest.password.length > 0}
                         onChange={(e) => setRegisterRequest({ ...registerRequest, password: e.currentTarget.value })}
                     />
 
@@ -153,6 +153,7 @@ export const Register = () => {
                         color="primary"
                         type={showPassword ? "text" : "password"}
                         value={repeatedPassword}
+                        error={!(registerRequest.password === repeatedPassword || repeatedPassword.length === 0)}
                         onChange={(e) => setRepeatedPassword(e.target.value)}
                     />
                     <Box sx={{ width: "100%" }}>

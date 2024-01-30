@@ -30,7 +30,6 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(Componen
                     }
                 } else {
                     userModifier(null);
-                    navigate("/logout");
                 }
                 return {
                     ...config,
@@ -45,7 +44,7 @@ export function withAxiosIntercepted<T extends JSX.IntrinsicAttributes>(Componen
                 (error: any) => {
                     if (error.response.status === 403) {
                         localStorage.clear();
-                        console.log("current user interceptor: ", currentUser);
+                        userModifier(null);
                     }
                     return Promise.reject(error);
                 }

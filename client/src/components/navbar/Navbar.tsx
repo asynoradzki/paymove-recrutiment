@@ -10,7 +10,6 @@ export const Navbar = () => {
     const navigate = useNavigate();
     const { currentUser, userModifier } = useContext(UserContext);
     const location = useLocation();
-    console.log("navbar current user: ", currentUser);
 
     const handleOnLogoutClick = async () => {
         const jwtToken: string | null = localStorage.getItem(ACCESS_TOKEN);

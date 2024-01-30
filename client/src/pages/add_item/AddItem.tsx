@@ -4,7 +4,7 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { ItemApi } from "../../api/ItemApi";
 import { toast } from "react-toastify";
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Button, InputAdornment, Stack, TextField } from "@mui/material";
 import { AddItemContainer } from "./AddItems.styles";
 import { Haeding } from "../../router/App.styles";
 import { CLOSE_TIME } from "../../constants/constants";
@@ -19,6 +19,7 @@ export const AddItem = () => {
         sellerEmail: currentUser?.sub ? currentUser.sub : "",
     });
     const [isRequestValid, setIsRequestValid] = useState<boolean>(false);
+    const [priceInDollars, setPriceInDollars] = useState<string>("");
 
     const addItem = useCallback(async () => {
         try {
@@ -57,6 +58,21 @@ export const AddItem = () => {
             !!addItemRequest.sellerEmail;
         setIsRequestValid(isValid);
     }, [addItemRequest]);
+
+    const handlePriceInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const value = event.target.value;
+
+        // Validate input format: "dd,cc"
+        if (/^\d{0,6}(,\d{0,2})?$/.test(value)) {
+            setPriceInDollars(value);
+
+            const parts: string[] = value.split(",");
+            const dollars: number = parseInt(parts[0]) || 0;
+            const cents: number = parseInt(parts[1]) || 0;
+            const totalCents: number = dollars * 100 + cents;
+            setAddItemRequest((prev) => ({ ...prev, price: totalCents }));
+        }
+    };
 
     return (
         <AddItemContainer>
@@ -97,8 +113,11 @@ export const AddItem = () => {
                         variant="outlined"
                         required
                         color="primary"
-                        value={addItemRequest.price}
-                        onChange={(e) => setAddItemRequest({ ...addItemRequest, price: +e.currentTarget.value })}
+                        value={priceInDollars}
+                        InputProps={{
+                            startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                        }}
+                        onChange={handlePriceInputChange}
                     />
                     <Button
                         variant="contained"

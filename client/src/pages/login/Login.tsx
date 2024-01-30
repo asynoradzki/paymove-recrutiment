@@ -51,7 +51,7 @@ export const Login = () => {
     }, [signInRequest.email]);
 
     useEffect(() => {
-        setIsPasswordValid(signInRequest.password.length > 0);
+        setIsPasswordValid(signInRequest.password.length > 7);
     }, [signInRequest.password]);
 
     return (
@@ -85,6 +85,7 @@ export const Login = () => {
                         color="primary"
                         type={showPassword ? "text" : "password"}
                         value={signInRequest.password}
+                        error={!(isPasswordValid || signInRequest.password.length === 0)}
                         onChange={(e) => setSignInRequest({ ...signInRequest, password: e.currentTarget.value })}
                     />
                     <Box sx={{ width: "100%" }}>

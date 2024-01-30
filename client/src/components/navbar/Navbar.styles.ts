@@ -21,7 +21,6 @@ export const NavbarLink = styled(Link)`
     font-size: 24px;
 
     &:hover {
-        // text-decoration: underline;
         cursor: pointer;
         color: ${COLOR2};
     }
@@ -33,7 +32,6 @@ export const LogoutLinkButton = styled.span`
     font-size: 24px;
 
     &:hover {
-        // text-decoration: underline;
         cursor: pointer;
         color: ${COLOR2};
     }
