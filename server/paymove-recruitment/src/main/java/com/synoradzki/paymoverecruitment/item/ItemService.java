@@ -22,7 +22,7 @@ public class ItemService {
     private final JwtService jwtService;
 
     public List<ItemResponseDTO> getAvailableItems() {
-        List<Item> items = itemRepository.findByBuyerIsNull();
+        List<Item> items = itemRepository.findByBuyerIsNullOrderByOfferDate();
 
         return items.stream()
                 .map(itemDTOMapper).toList();
@@ -32,7 +32,7 @@ public class ItemService {
         AppUser user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new EntityNotFoundException("email not found in database"));
 
-        List<Item> items = itemRepository.findBySellerEquals(user);
+        List<Item> items = itemRepository.findBySellerEqualsOrderByOfferDate(user);
 
         return items.stream()
                 .map(itemDTOMapper)
@@ -44,7 +44,7 @@ public class ItemService {
         AppUser user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new EntityNotFoundException("email not found in database"));
 
-        List<Item> items = itemRepository.findByBuyerEquals(user);
+        List<Item> items = itemRepository.findByBuyerEqualsOrderByOfferDate(user);
 
         return items.stream()
                 .map(itemDTOMapper)

@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
-    List<Item> findByBuyerIsNull();
+    List<Item> findByBuyerIsNullOrderByOfferDate();
 
-    List<Item> findBySellerEquals(AppUser user);
+    List<Item> findBySellerEqualsOrderByOfferDate(AppUser user);
 
-    List<Item> findByBuyerEquals(AppUser user);
+    List<Item> findByBuyerEqualsOrderByOfferDate(AppUser user);
 }

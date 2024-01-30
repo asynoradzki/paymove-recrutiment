@@ -7,7 +7,6 @@ import com.synoradzki.paymoverecruitment.security.token.TokenRepository;
 import com.synoradzki.paymoverecruitment.security.token.TokenType;
 import com.synoradzki.paymoverecruitment.security.user.AppUser;
 import com.synoradzki.paymoverecruitment.security.user.AppUserRepository;
-import com.synoradzki.paymoverecruitment.security.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

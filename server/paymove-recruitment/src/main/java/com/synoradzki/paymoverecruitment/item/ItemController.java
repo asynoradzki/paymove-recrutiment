@@ -23,13 +23,12 @@ public class ItemController {
      *
      *
      * @return a list of items for sale. Endpoint for unauthorized users
-     *
      * ItemResponseDTO(
      *        Long itemId,
      *        LocalDate offerDate,
      *        String itemName,
      *        String itemDescription,
-     *        Integer price,
+     *        Integer price, WARNING! the price is in cents!
      *        String sellerEmail,
      *        LocalDate purchaseDate,
      *        String buyerEmail
@@ -43,19 +42,17 @@ public class ItemController {
     /**
      * Displays items offered for sale by the chosen user identified by email
      * Endpoint for authenticated users
-     *
      * GET
      * /items/offered?email=email
      *
      * @param email as String
      * @return ItemResponseDTO List
-     *
      * ItemResponseDTO(
      *        Long itemId,
      *        LocalDate offerDate,
      *        String itemName,
      *        String itemDescription,
-     *        Integer price,
+     *        Integer price, WARNING! the price is in cents!
      *        String sellerEmail,
      *        LocalDate purchaseDate,
      *        String buyerEmail
@@ -74,7 +71,6 @@ public class ItemController {
     /**
      * Displays purchased items by the chosen user identified by email
      * Endpoint for authenticated users
-     *
      * GET
      * /items/purchased?email=email
      *
@@ -85,7 +81,7 @@ public class ItemController {
      *        LocalDate offerDate,
      *        String itemName,
      *        String itemDescription,
-     *        Integer price,
+     *        Integer price, WARNING! the price is in cents!
      *        String sellerEmail,
      *        LocalDate purchaseDate,
      *        String buyerEmail
@@ -104,7 +100,6 @@ public class ItemController {
      *
      * The method allows authenticated users to add items for sale
      * Endpoint for authenticated users
-     *
      * POST
      * /items/
      *
@@ -112,7 +107,7 @@ public class ItemController {
      * ItemCreateDTO(
      *         String itemName,
      *         String itemDescription,
-     *         Integer price,
+     *         Integer price, WARNING! the price is in cents!
      *         String sellerEmail
      * )
      *
@@ -122,7 +117,7 @@ public class ItemController {
      *        LocalDate offerDate,
      *        String itemName,
      *        String itemDescription,
-     *        Integer price,
+     *        Integer price, WARNING! the price is in cents!
      *        String sellerEmail,
      *        LocalDate purchaseDate,
      *        String buyerEmail
@@ -140,7 +135,6 @@ public class ItemController {
 
     /**
      * Allows authenticated users to buy products
-     *
      * PATCH
      * /items/buy/itemId?email=email
      *
@@ -152,7 +146,7 @@ public class ItemController {
      *        LocalDate offerDate,
      *        String itemName,
      *        String itemDescription,
-     *        Integer price,
+     *        Integer price, WARNING! the price is in cents!
      *        String sellerEmail,
      *        LocalDate purchaseDate,
      *        String buyerEmail
@@ -173,7 +167,6 @@ public class ItemController {
 
     /**
      * Allows authenticated users to delete items
-     *
      * DELETE
      * /items/itemId
      *
@@ -185,7 +178,7 @@ public class ItemController {
      *        LocalDate offerDate,
      *        String itemName,
      *        String itemDescription,
-     *        Integer price,
+     *        Integer price, WARNING! the price is in cents!
      *        String sellerEmail,
      *        LocalDate purchaseDate,
      *        String buyerEmail
