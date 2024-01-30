@@ -5,10 +5,14 @@ The app is a simpliied second hand items auction allowing users to sell and buy 
 
 The Navbar allows to navigate between available functionalities displaying navitagion options based on the user's authorities. Some date is loaded on the application start.
 
-## Built With
-Frontend: 
-### Progremming Language: Typescript
+## Technical Summary
+Frontend:
+[x] written in Typescript
 
+
+
+
+## Built With
 
 <a  href="https://www.typescriptlang.org/"  title="Typescript"><img  src="https://github.com/get-icon/geticon/raw/master/icons/typescript-icon.svg"  alt="Typescript"  width="50px"  height="50px"></a>
 <a  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"  title="JavaScript"><img  src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg"  alt="JavaScript"  width="50px"  height="50px"></a>
@@ -18,7 +22,6 @@ Frontend:
 <a  href="https://material-ui.com/"  title="Material UI"><img  src="https://github.com/get-icon/geticon/raw/master/icons/material-ui.svg"  alt="Material UI"  width="50px"  height="50px"></a>
 <a  href="https://code.visualstudio.com/"  title="Visual Studio Code"><img  src="https://github.com/get-icon/geticon/raw/master/icons/visual-studio-code.svg"  alt="Visual Studio Code"  width="50px"  height="50px"></a>
 <a  href="https://www.npmjs.com/"  title="npm"><img  src="https://github.com/get-icon/geticon/raw/master/icons/npm.svg"  alt="npm"  width="50px"  height="50px"></a>
-<a  href="https://www.npmjs.com/"  title="npm"><img  src="https://github.com/get-icon/geticon/raw/master/icons/docker.svg"  alt="npm"  width="50px"  height="50px"></a>
 
 Backend:
 
