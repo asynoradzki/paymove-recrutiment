@@ -1,9 +1,21 @@
 # paymove-recrutiment
 
 ## About The Project
-The app is a simpliied second hand items auction allowing users to sell and buy their items for sale. Unauthorized users can log-in, register and view all items availalbe for sale. To be able to have access to more features a user has to register and log-in. Then users can buy items, view items they've bought, view items they've offered for sale, delete items they've added. In addition, users with a role of ADMIN can view all application users and delete every item available for sale.
+The app is a simpliied second hand items auction allowing users to sell and buy their items for sale. Unauthorized users can log-in, register and view all items availalbe for sale. To be able to have access to more features a user has to register and log-in. Then users can add items for sale, buy items, view items they've bought, view items they've offered for sale and finally delete items they've added. In addition, users with a role of ADMIN can view all application users and delete every item available for sale.
 
 The Navbar allows to navigate between available functionalities displaying navitagion options based on the user's authorities. Some date is loaded on the application start.
+
+## To start the application
+* Clone the repository
+* To run server application
+  * Open the server folder in your IDE
+  * Update Maven
+  * Run the application
+* To run client application
+  * Open the client folder in your IDE
+  * run npm install command to load the dependencies
+  * run npm start
+
 1. Unauthorized user
 ![1](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/350c1fd0-0d81-4019-a375-a8cb8f7846a9)
 
@@ -16,14 +28,21 @@ The Navbar allows to navigate between available functionalities displaying navit
 4. User logged-in as ADMIN
 ![4](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/a3a6d518-d32b-4609-b786-dff1e88739b3)
 
-
-
 ## Technical Summary
 Frontend:
 - [x] written in Typescript / React
-- [x] http requests in Axios
+- [x] http requests performed in Axios
 - [x] syling Styled Components & MUI
+- [x] react-router used for navigation
+- [x] signed-in user stored in user context
+- [x] react-tostify used for UI messaging
 
+Backend:
+- [x] JWT token used to authenticate and authorize users
+- [x] JWT token persisted in database
+- [x] custom JwtAuthenticationFilter implemented
+- [x] global Exception handling used @RestControllerAdvice
+- [x] Swagger used for endpoint testing
 
 ## Built With
 
