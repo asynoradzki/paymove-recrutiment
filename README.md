@@ -1,7 +1,7 @@
 # paymove-recrutiment
 
 ## About The Project
-The app is a simpliied second hand items auction allowing users to sell and buy their items for sale. Unauthorized users can log-in, register and view all items availalbe for sale. To be able to have access to more features a user has to register and log-in. Then users can add items for sale, buy items, view items they've bought, view items they've offered for sale and finally delete items they've added. In addition, users with a role of ADMIN can view all application users and delete every item available for sale.
+The app is a simpliied second-hand items auction allowing users to sell and buy their items for sale. Unauthorized users can log-in, register and view all items availalbe for sale. To be able to have access to more features a user has to register and log-in. Then users can add items for sale, buy items, view items they've bought, view items they've offered for sale and finally delete items they've added. In addition, users with a role of ADMIN can view all application users and delete every item available for sale.
 
 The Navbar allows to navigate between available functionalities displaying navitagion options based on the user's authorities. Some date is loaded on the application start.
 
