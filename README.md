@@ -1,7 +1,14 @@
 # paymove-recrutiment
 
+## About The Project
+The app is a simpliied second hand items auction allowing users to sell and buy their items for sale. Unauthorized users can log-in, register and view all items availalbe for sale. To be able to have access to more features a user has to register and log-in. Then users can buy items, view items they've bought, view items they've offered for sale, delete items they've added. In addition, users with a role of ADMIN can view all application users and delete every item available for sale.
+
+The Navbar allows to navigate between available functionalities displaying navitagion options based on the user's authorities. Some date is loaded on the application start.
+
 ## Built With
 Frontend: 
+### Progremming Language: Typescript
+
 
 <a  href="https://www.typescriptlang.org/"  title="Typescript"><img  src="https://github.com/get-icon/geticon/raw/master/icons/typescript-icon.svg"  alt="Typescript"  width="50px"  height="50px"></a>
 <a  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"  title="JavaScript"><img  src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg"  alt="JavaScript"  width="50px"  height="50px"></a>
@@ -21,10 +28,6 @@ Backend:
 
 Other Technologies:
 
-<a href="https://www.figma.com" title="figma"><img  src="https://github.com/get-icon/geticon/raw/master/icons/figma.svg"  alt="figma"  width="50px"  height="50px">
-<a  href="https://discord.com/"  title="Discord"><img  src="https://github.com/get-icon/geticon/raw/master/icons/discord.svg"  alt="Discord"  width="50px"  height="50px"></a>
 <a  href="https://git-scm.com/"  title="Git"><img  src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg"  alt="Git"  width="50px"  height="50px"></a>
 <a  href="https://github.com/"  title="github"><img  src="https://github.com/ptatarczuk/Ideas/blob/main/server/images/github.svg"  alt="github"  width="50px"  height="50px"></a>
 <a  href="https://swagger.io/"  title="swagger"><img  src="https://github.com/get-icon/geticon/raw/master/icons/swagger.svg"  alt="swagger"  width="50px"  height="50px"></a>
-<a  href="https://www.docker.com/"  title="docker"><img  src="https://github.com/get-icon/geticon/raw/master/icons/docker-icon.svg"  alt="docker"  width="50px"  height="50px"></a>
-<a  href="https://trello.com/"  title="trello"><img  src="https://github.com/get-icon/geticon/raw/master/icons/trello.svg"  alt="trello"  width="50px"  height="50px"></a>
