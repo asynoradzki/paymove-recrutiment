@@ -11,6 +11,7 @@ The Navbar allows to navigate between available functionalities displaying navit
 * To run server application
   * Open the server folder in your IDE
   * Update Maven
+  * Set-up your Postgres database, update connection & user parameters in application.properties file
   * Run the application
 * To run client application
   * Open the client folder in your IDE
@@ -47,6 +48,7 @@ Backend:
 - [x] custom JwtAuthenticationFilter implemented
 - [x] global Exception handling used @RestControllerAdvice
 - [x] Swagger used for endpoint testing
+- [x] Contorller methods documented in Java Doc
 
 ## Built With
 
