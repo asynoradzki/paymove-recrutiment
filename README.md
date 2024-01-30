@@ -24,7 +24,7 @@ The Navbar allows to navigate between available functionalities displaying navit
 1. Unauthorized user
 ![1](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/350c1fd0-0d81-4019-a375-a8cb8f7846a9)
 
-2. Regiser page
+2. Register page
 ![2](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/f503e464-200c-4e0b-b6c4-109ac3453003)
 
 3. Login page
@@ -37,7 +37,7 @@ The Navbar allows to navigate between available functionalities displaying navit
 Frontend:
 - [x] written in Typescript / React
 - [x] http requests performed in Axios
-- [x] syling Styled Components & MUI
+- [x] styling Styled Components & MUI
 - [x] react-router used for navigation
 - [x] signed-in user stored in user context
 - [x] react-tostify used for UI messaging
