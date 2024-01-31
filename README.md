@@ -30,7 +30,10 @@ The Navbar allows to navigate between available functionalities displaying navit
 3. Login page
 ![3](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/78d4b136-b722-486e-a68b-fd58abc0784a)
 
-4. User logged-in as ADMIN
+4. Adding new item for sale
+![image](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/e20d42e7-0db6-488c-802d-94d41ed3b794)
+
+5. User logged-in as ADMIN
 ![4](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/7b042681-db6e-4e5c-bcfc-236caa23b72d)
 
 
