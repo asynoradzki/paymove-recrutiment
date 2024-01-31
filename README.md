@@ -22,16 +22,20 @@ The Navbar allows to navigate between available functionalities displaying navit
 ## Application screenshots
 
 1. Unauthorized user
-![1](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/350c1fd0-0d81-4019-a375-a8cb8f7846a9)
+![1](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/5a2461be-d10f-438f-a8cc-c1b8b6ddff1d)
 
 2. Register page
-![2](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/f503e464-200c-4e0b-b6c4-109ac3453003)
+![2](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/80d10c1d-277f-4f44-977a-0a8ceb2eb219)
 
 3. Login page
-![3](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/e7e39f87-f2d7-45f6-aa14-714ffed109a2)
+![3](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/78d4b136-b722-486e-a68b-fd58abc0784a)
 
-4. User logged-in as ADMIN
-![4](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/a3a6d518-d32b-4609-b786-dff1e88739b3)
+4. Adding new item for sale
+![image](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/e20d42e7-0db6-488c-802d-94d41ed3b794)
+
+5. User logged-in as ADMIN
+![4](https://github.com/asynoradzki/paymove-recrutiment/assets/115543941/7b042681-db6e-4e5c-bcfc-236caa23b72d)
+
 
 ## Technical Summary
 Frontend:
